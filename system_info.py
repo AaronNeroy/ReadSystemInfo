@@ -1,13 +1,3 @@
-"""
-system_info.py
-==============
-Pulls key hardware and OS information from the local machine and displays
-it in a clean, readable report. Optionally saves the output to a .txt file.
-
-Requirements:
-    pip install psutil
-"""
-
 import platform
 import socket
 import datetime
@@ -75,9 +65,9 @@ def get_disk_info():
 
 
 def print_section(title, data):
-    print(f"\n{'='*45}")
+    print(f"\n{'-'*45}")
     print(f"  {title}")
-    print(f"{'='*45}")
+    print(f"{'-'*45}")
     if isinstance(data, list):
         for i, item in enumerate(data, 1):
             print(f"\n  [Disk {i}]")
@@ -90,7 +80,7 @@ def print_section(title, data):
 
 def generate_report():
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"  SYSTEM INFORMATION REPORT")
+    print(f"\n  SYSTEM INFORMATION REPORT")
     print(f"  Generated: {timestamp}")
 
 
