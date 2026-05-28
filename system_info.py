@@ -90,10 +90,9 @@ def print_section(title, data):
 
 def generate_report():
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"\n{'#'*45}")
     print(f"  SYSTEM INFORMATION REPORT")
     print(f"  Generated: {timestamp}")
-    print(f"{'#'*45}")
+
 
     sections = {
         "OPERATING SYSTEM": get_os_info(),
@@ -105,7 +104,7 @@ def generate_report():
     for title, data in sections.items():
         print_section(title, data)
 
-    print(f"\n{'='*45}\n")
+    print(f"")
     return sections
 
 
@@ -116,9 +115,9 @@ def save_report(sections):
         f.write(f"SYSTEM INFORMATION REPORT\n")
         f.write(f"Generated: {datetime.datetime.now()}\n\n")
         for title, data in sections.items():
-            f.write(f"\n{'='*45}\n")
+            f.write(f"")
             f.write(f"  {title}\n")
-            f.write(f"{'='*45}\n")
+            f.write(f"")
             if isinstance(data, list):
                 for i, item in enumerate(data, 1):
                     f.write(f"\n  [Disk {i}]\n")
